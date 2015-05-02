@@ -26,7 +26,7 @@ tags=topography, calculator, time, magnetic, north, bearing, compass, declinatio
 
 homepage=http://hacked-crew.blogspot.com/
 tracker=*Bug tracker url*
-repository=*Repository url*
+repository=https://github.com/Hacked-Crew/Magnetic-Declination
 category=Plugins
 icon=icon.png
 # experimental flag
