@@ -19,7 +19,7 @@
  ***************************************************************************/
 """
 __author__ = 'Aldo Scorza'
-__date__ = '2015-05-01'
+__date__ = '2015-05-04'
 __copyright__ = '(C) 2015, Aldo Scorza'
 
 
@@ -456,7 +456,7 @@ class MagneticDeclination(QObject):
             QgsField("validity", QVariant.String),
             QgsField("H unit", QVariant.String),
             QgsField("height", QVariant.Double),
-            QgsField("declination", QVariant.Double),
+            QgsField("declinatio", QVariant.Double),
             QgsField("value", QVariant.String)
             ])
         pointLayer.commitChanges()
@@ -484,7 +484,7 @@ class MagneticDeclination(QObject):
         svgStyleMN ['name'] = str(str(self.plugin_dir) + str("/Modern_nautical_compass_rose_MN.svg"))
         svgStyleMN ['size_unit'] = 'MapUnit'
         svgStyleMN ['size'] = str(self.distance)
-        svgStyleMN ['angle_expression'] = 'declination'
+        svgStyleMN ['angle_expression'] = 'declinatio'
         #
         layerTN = QgsSvgMarkerSymbolLayerV2.create(svgStyleTN)
         layerMN = QgsSvgMarkerSymbolLayerV2.create(svgStyleMN)
