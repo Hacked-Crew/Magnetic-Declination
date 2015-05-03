@@ -124,9 +124,9 @@
      <property name="geometry">
       <rect>
        <x>358</x>
-       <y>190</y>
+       <y>191</y>
        <width>91</width>
-       <height>23</height>
+       <height>33</height>
       </rect>
      </property>
      <property name="font">
@@ -476,9 +476,9 @@ rose</string>
      <property name="geometry">
       <rect>
        <x>358</x>
-       <y>240</y>
+       <y>236</y>
        <width>91</width>
-       <height>23</height>
+       <height>33</height>
       </rect>
      </property>
      <property name="font">
