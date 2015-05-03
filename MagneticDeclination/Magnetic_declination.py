@@ -311,16 +311,16 @@ class MagneticDeclination(QObject):
         #HEIGHT CONTROLS
         if simple_Xheight == 0:
             simple_Cheight = 0
-            self.Runit = "NaN"
+            self.Runit = "MSL"
             self.Rheight = 0
         else:
             if simple_Xmeter == 0:
                 simple_Cheight = float(simple_height)
-                self.Runit = "feet"
+                self.Runit = "h ft"
                 self.Rheight = float(simple_height)
             else:
                 simple_Cheight = float(simple_height) * 3.2808399
-                self.Runit = "meter"
+                self.Runit = "h mt"
                 self.Rheight = float(simple_height)
         #
         #TYPE BASED CALCULATION
@@ -331,8 +331,8 @@ class MagneticDeclination(QObject):
         else:
             Rheading = (float(self.Rdeclination) + float(simple_heading)) % 360
         #
-        self.dlg.declination_lineEdit.setText(unicode(str(str(self.Rdeclination) + u'\u00B0')))
-        self.dlg.heading_lineEdit.setText(unicode(str(str(Rheading) + u'\u00B0')))
+        self.dlg.declination_lineEdit.setText(str(self.Rdeclination) + u'\N{DEGREE SIGN}')
+        self.dlg.heading_lineEdit.setText(str(Rheading) + u'\N{DEGREE SIGN}')
         convPoint = QgsCoordinateTransform(self.pluginCRS, self.canvasCRS).transform(QgsPoint(float(self.simple_longitude), float(self.simple_latitude)))
         self.xX = float(convPoint.x())
         self.yY = float(convPoint.y())
