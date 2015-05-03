@@ -12,7 +12,7 @@ the Free Software Foundation; either version 2 of the License, or
 (at your option) any later version.
 ```
 Calculates the magnetic heading from a true geographic heading and vice versa.
-Impress on map a  Nautical Compass Rose (non conformal) with the values obtained.
+Impress on map a  Nautical Compass Rose (non conformal) with obtained values.
 
 
 Use "geomag package"
@@ -24,6 +24,6 @@ http://www.ngdc.noaa.gov/geomag/WMM/DoDWMM.shtm)
 
 __author__ = 'Aldo Scorza'
 
-__date__ = '2015-05-01'
+__date__ = '2015-05-04'
 
 __copyright__ = '(C) 2015, Aldo Scorza'
