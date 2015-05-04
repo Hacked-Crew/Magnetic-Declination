@@ -331,8 +331,8 @@ class MagneticDeclination(QObject):
         else:
             Rheading = (float(self.Rdeclination) + float(simple_heading)) % 360
         #
-        self.dlg.declination_lineEdit.setText(str(self.Rdeclination) + u'\N{DEGREE SIGN}')
-        self.dlg.heading_lineEdit.setText(str(Rheading) + u'\N{DEGREE SIGN}')
+        self.dlg.declination_lineEdit.setText(unicode(str(self.Rdeclination) + u'\u00B0'))
+        self.dlg.heading_lineEdit.setText(unicode(str(Rheading) + u'\u00B0'))
         convPoint = QgsCoordinateTransform(self.pluginCRS, self.canvasCRS).transform(QgsPoint(float(self.simple_longitude), float(self.simple_latitude)))
         self.xX = float(convPoint.x())
         self.yY = float(convPoint.y())
@@ -463,7 +463,7 @@ class MagneticDeclination(QObject):
         #
         feat = QgsFeature()
         feat.setGeometry(QgsGeometry.fromPoint(self.pointRose))
-        vaLue = str("VAR " + str(abs(round(self.Rdeclination, 2))) + u'\N{DEGREE SIGN}' + "\n" + str(float(round(self.Rheight, 2))) + " " + str(self.Runit) + "\n\n\n\n(" + str(str(self.Rdate)) + ")")
+        vaLue = (unicode(str("VAR " + str(abs(round(self.Rdeclination, 2))) + u'\u00B0' + "\n" + str(float(round(self.Rheight, 2))) + " " + str(self.Runit) + "\n\n\n\n(" + str(str(self.Rdate)) + ")")))
         #
         feat.setAttributes([
             self.simple_longitude,
