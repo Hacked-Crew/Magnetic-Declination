@@ -463,7 +463,7 @@ class MagneticDeclination(QObject):
         #
         feat = QgsFeature()
         feat.setGeometry(QgsGeometry.fromPoint(self.pointRose))
-        vaLue = (unicode(str("VAR " + str(abs(round(self.Rdeclination, 2))) + u'\u00B0' + "\n" + str(float(round(self.Rheight, 2))) + " " + str(self.Runit) + "\n\n\n\n(" + str(str(self.Rdate)) + ")")))
+        vaLue = (unicode(("VAR " + str(abs(round(self.Rdeclination, 2))) + u'\u00B0' + "\n" + str(float(round(self.Rheight, 2))) + " " + str(self.Runit) + "\n\n\n\n(" + str(str(self.Rdate)) + ")")))
         #
         feat.setAttributes([
             self.simple_longitude,
