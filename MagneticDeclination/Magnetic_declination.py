@@ -480,6 +480,7 @@ class MagneticDeclination(QObject):
         svgStyleTN ['name'] = str(str(self.plugin_dir) + str("/Modern_nautical_compass_rose_TN.svg"))
         svgStyleTN ['size_unit'] = 'MapUnit'
         svgStyleTN ['size'] = str(self.distance)
+        svgStyleTN ['angle_expression'] = '0'
         svgStyleMN = {}
         svgStyleMN ['name'] = str(str(self.plugin_dir) + str("/Modern_nautical_compass_rose_MN.svg"))
         svgStyleMN ['size_unit'] = 'MapUnit'
