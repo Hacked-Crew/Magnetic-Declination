@@ -24,6 +24,6 @@ http://www.ngdc.noaa.gov/geomag/WMM/DoDWMM.shtm)
 
 __author__ = 'Aldo Scorza'
 
-__date__ = '2015-05-04'
+__date__ = '2015-05-07'
 
 __copyright__ = '(C) 2015, Aldo Scorza'
