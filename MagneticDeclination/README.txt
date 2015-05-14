@@ -16,13 +16,13 @@
  *                                                                         *
  ***************************************************************************/
 __author__ = 'Aldo Scorza'
-__date__ = '2015-05-07'
+__date__ = '2015-05-14'
 __copyright__ = '(C) 2015, Aldo Scorza'
 
 MAGNETIC DECLINATION PLUGIN FOR QGIS
 
 Calculates the magnetic heading from a true geographic heading and vice versa.
-Impress on map a  Nautical Compass Rose (non conformal) with obtained values.
+Impress on map a Nautical Compass Rose (conformal) with obtained values.
 
 
 

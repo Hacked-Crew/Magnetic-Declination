@@ -19,7 +19,7 @@
  ***************************************************************************/
 """
 __author__ = 'Aldo Scorza'
-__date__ = '2015-05-07'
+__date__ = '2015-05-14'
 __copyright__ = '(C) 2015, Aldo Scorza'
 
 
@@ -308,24 +308,66 @@ class MagneticDeclination(QObject):
             simple_month = date.today().month
             simple_day = date.today().day
         #
+        if simple_year == 2019:
+            yearStart = 2018
+        else:
+            yearStart = simple_year
+        yearEnd = yearStart + 1
+        #
         #HEIGHT CONTROLS
         if simple_Xheight == 0:
             simple_Cheight = 0
-            self.Runit = "MSL"
+            self.Runit = ""
             self.Rheight = 0
         else:
             if simple_Xmeter == 0:
                 simple_Cheight = float(simple_height)
-                self.Runit = "h ft"
                 self.Rheight = float(simple_height)
+                if simple_Cheight == 0:
+                    self.Runit = ""
+                else:
+                    self.Runit = "ft"
             else:
                 simple_Cheight = float(simple_height) * 3.2808399
-                self.Runit = "h mt"
                 self.Rheight = float(simple_height)
+                if simple_Cheight == 0:
+                    self.Runit = ""
+                else:
+                    self.Runit = "mt"
         #
         #TYPE BASED CALCULATION
         self.Rdeclination = geomag.declination(float(self.simple_latitude), float(self.simple_longitude), float(simple_Cheight), date(simple_year,simple_month,simple_day))
+        Sdeclination = geomag.declination(float(self.simple_latitude), float(self.simple_longitude), float(simple_Cheight), date(yearStart,simple_month,simple_day))
+        Edeclination = geomag.declination(float(self.simple_latitude), float(self.simple_longitude), float(simple_Cheight), date(yearEnd,simple_month,simple_day))
+        #
+        if self.Rdeclination > 0:
+            self.Rdirection = "E"
+        elif self.Rdeclination < 0:
+            self.Rdirection = "W"
+        else:
+            self.Rdirection = ""
+        #
+        self.RdecliVar = Edeclination - Sdeclination
+        if self.RdecliVar > 0:
+            self.Rlevel = "INCREASE "
+        elif self.RdecliVar < 0:
+            self.Rlevel = "DECREASE "
+        else:
+            self.Rlevel = ""
+        #
+        varDegrees = int(abs(self.RdecliVar))
+        varMinutes = (int(abs(60 * (self.RdecliVar - varDegrees)))) % 60
+        if  varDegrees == 0:
+            self.annual = (unicode(str(varMinutes) + u'\u2032'))
+        else:
+            self.annual = (unicode(str(varDegrees) + u'\u00B0' + str(varMinutes) + u'\u2032'))
+        #
+        degrees = int(abs(self.Rdeclination))
+        minutes = (int(abs(60 * (self.Rdeclination - degrees)))) % 60
+        self.vAr = (unicode(str(degrees) + u'\u00B0' + str(minutes) + u'\u2032'))
+        #
         self.Rdate = date(simple_year,simple_month,simple_day)
+        #
         if simple_XtoMagnetic == 1:
             Rheading = (float(self.Rdeclination) + float(simple_heading)) % 360 
         else:
@@ -345,7 +387,7 @@ class MagneticDeclination(QObject):
         QObject.connect( self.pointEmitter, SIGNAL("canvasClicked(const QgsPoint, Qt::MouseButton)"), self.simple_Point)
         self.iface.mapCanvas().setMapTool( self.pointEmitter )
         self.dlg.hide()
-        self.iface.messageBar().pushMessage("", "Waiting for coordinates", level=QgsMessageBar.WARNING,)
+        self.iface.messageBar().pushMessage("", "Waiting for COORDINATES", level=QgsMessageBar.WARNING,)
 
 
     def simple_Point(self, point, button):
@@ -403,7 +445,7 @@ class MagneticDeclination(QObject):
             #
             QObject.connect(self.iface.mapCanvas(), SIGNAL("xyCoordinates(const QgsPoint &)"), self.simple_Scale)
             self.dlg.hide()
-            self.iface.messageBar().pushMessage("", "Waiting for radius setting", level=QgsMessageBar.WARNING,)
+            self.iface.messageBar().pushMessage("", "Waiting for SCALE setting", level=QgsMessageBar.WARNING,)
 
 
     def simple_Scale(self, point):
@@ -451,19 +493,20 @@ class MagneticDeclination(QObject):
         pointLayer.startEditing()  
         layerData = pointLayer.dataProvider() 
         layerData.addAttributes([
-            QgsField("WGS84-lon", QVariant.Double),
-            QgsField("WGS84-lat", QVariant.Double),
-            QgsField("validity", QVariant.String),
-            QgsField("H unit", QVariant.String),
-            QgsField("height", QVariant.Double),
-            QgsField("declinatio", QVariant.Double),
+            QgsField("Lon WGS84", QVariant.Double),
+            QgsField("Lat WGS84", QVariant.Double),
+            QgsField("Epoch", QVariant.String),
+            QgsField("h Unit", QVariant.String),
+            QgsField("h WGS84", QVariant.Double),
+            QgsField("Declinatio", QVariant.Double),
+            QgsField("Annual", QVariant.Double),
             QgsField("value", QVariant.String)
             ])
         pointLayer.commitChanges()
         #
         feat = QgsFeature()
         feat.setGeometry(QgsGeometry.fromPoint(self.pointRose))
-        vaLue = (unicode(("VAR " + str(abs(round(self.Rdeclination, 2))) + u'\u00B0' + "\n" + str(float(round(self.Rheight, 2))) + " " + str(self.Runit) + "\n\n\n\n(" + str(str(self.Rdate)) + ")")))
+        vaLue = (unicode(("VAR " + unicode(self.vAr) + str(self.Rdirection) + "\n" + "(" + str(str(self.Rdate)) + ")" + "\n\n\n\n" + "h WGS84 " + str(float(round(self.Rheight, 2))) + " " + str(self.Runit) + "\n" + "ANNUAL " + str(self.Rlevel) + unicode(self.annual))))
         #
         feat.setAttributes([
             self.simple_longitude,
@@ -472,6 +515,7 @@ class MagneticDeclination(QObject):
             self.Runit,
             self.Rheight,
             self.Rdeclination,
+            self.RdecliVar,
             vaLue
             ])
         layerData.addFeatures([feat])
@@ -485,12 +529,13 @@ class MagneticDeclination(QObject):
         svgStyleMN ['name'] = str(str(self.plugin_dir) + str("/Modern_nautical_compass_rose_MN.svg"))
         svgStyleMN ['size_unit'] = 'MapUnit'
         svgStyleMN ['size'] = str(self.distance)
-        svgStyleMN ['angle_expression'] = 'declinatio'
+        svgStyleMN ['angle_expression'] = 'Declinatio'
         #
         layerTN = QgsSvgMarkerSymbolLayerV2.create(svgStyleTN)
         layerMN = QgsSvgMarkerSymbolLayerV2.create(svgStyleMN)
         pointLayer.rendererV2().symbols()[0].appendSymbolLayer(layerTN)
         pointLayer.rendererV2().symbols()[0].appendSymbolLayer(layerMN)
+        pointLayer.rendererV2().symbol().symbolLayer(0).setSize(1)
         #
         palyr = QgsPalLayerSettings()
         palyr.readFromLayer(pointLayer)
@@ -504,7 +549,7 @@ class MagneticDeclination(QObject):
         palyr.fontSizeInMapUnits = True
         palyr.multilineAlign = int(1)
         palyr.Rotation = float(self.Rdeclination)*-1
-        palyr.setDataDefinedProperty(QgsPalLayerSettings.Size, True, True, str(self.distance*0.025),'')
+        palyr.setDataDefinedProperty(QgsPalLayerSettings.Size, True, True, str(self.distance*0.020),'')
         palyr.setDataDefinedProperty(QgsPalLayerSettings.Rotation, True, True, str(float(self.Rdeclination)*-1),'')
         palyr.displayAll = True
         palyr.writeToLayer(pointLayer)

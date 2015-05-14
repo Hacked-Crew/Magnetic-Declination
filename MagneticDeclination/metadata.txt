@@ -10,7 +10,7 @@
 name=Magnetic Declination
 qgisMinimumVersion=2.6
 description=Calculates the magnetic heading from a true geographic heading and vice versa.
-version=1.0.9
+version=1.4.0
 author=Aldo Scorza
 email=hacked.crew@gmail.com
 
@@ -20,6 +20,7 @@ email=hacked.crew@gmail.com
 
 # Uncomment the following line and add your changelog:
 changelog=
+    1.4.0 more Compass Rose enhancement, now conformal; added annual variation; minor UI changes
     1.0.9 fixes Norths direction when map is rotated; fixes inverted heading issue; fix minor UI issue
     1.0.6 bug fixes, many thanks to Geodrinx (https://github.com/geodrinx)
     1.0.5 some bug fixed , minor language updates, fix minor UI issue
