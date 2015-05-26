@@ -19,7 +19,7 @@
  ***************************************************************************/
 """
 __author__ = 'Aldo Scorza'
-__date__ = '2015-05-14'
+__date__ = '2015-05-26'
 __copyright__ = '(C) 2015, Aldo Scorza'
 
 
@@ -81,6 +81,7 @@ class MagneticDeclination(QObject):
         # TODO: We are going to let the user set this up in a future iteration
         self.toolbar = self.iface.addToolBar(u'MagneticDeclination')
         self.toolbar.setObjectName(u'MagneticDeclination')
+        #
         #DECLARATION
         self.dlg.Calculate_Button.clicked.connect(self.simple_Calculate)
         self.dlg.FromMap_Button.clicked.connect(self.simple_FromMap)
@@ -90,6 +91,7 @@ class MagneticDeclination(QObject):
         self.dlg.feet_radioButton.clicked.connect(self.simple_Feet)
         self.dlg.toMagnetic_radioButton.clicked.connect(self.simple_ToMag)
         self.dlg.toTrue_radioButton.clicked.connect(self.simple_ToTrue)
+        self.dlg.color_toolButton.clicked.connect(self.simple_Kolors)
         #
         self.dlg.latitude_doubleSpinBox.valueChanged.connect(self.calcSenseLonLat)
         self.dlg.longitude_doubleSpinBox.valueChanged.connect(self.calcSenseLonLat)
@@ -221,6 +223,17 @@ class MagneticDeclination(QObject):
         self.canvasCRS = self.iface.mapCanvas().mapSettings().destinationCrs()
         self.pluginCRS = QgsCoordinateReferenceSystem(4326)
         #
+        #COLOR RESET
+        self.NameColor = self.dlg.color_lineEdit.text()
+        value = self.NameColor.lstrip('#')
+        R1 = value[0:2]
+        G2 = value[2:4]
+        B3 = value[4:6]
+        self.red = int(R1, 16)
+        self.green = int(G2, 16)
+        self.blue = int(B3, 16)
+        #
+        #OTHER RESET
         self.calcSense = 0
         self.SenseFromMap = 0
         #
@@ -301,18 +314,25 @@ class MagneticDeclination(QObject):
         simple_Xheight = self.dlg.height_groupBox.isChecked()
         simple_Xmeter = self.dlg.meter_radioButton.isChecked()
         simple_XtoMagnetic = self.dlg.toMagnetic_radioButton.isChecked()
+        simple_DateOptions = self.dlg.date1_radioButton.isChecked()
+        simple_HeightOptions = self.dlg.height_checkBox.isChecked()
         #
         #DATE CONTROLS
         if simple_Xdate == 0:
             simple_year = date.today().year
             simple_month = date.today().month
             simple_day = date.today().day
+        self.Rdate = date(simple_year,simple_month,simple_day)
         #
         if simple_year == 2019:
             yearStart = 2018
         else:
             yearStart = simple_year
         yearEnd = yearStart + 1
+        if simple_DateOptions == 1:
+            self.Rdate2 = simple_year
+        else:
+            self.Rdate2 = self.Rdate
         #
         #HEIGHT CONTROLS
         if simple_Xheight == 0:
@@ -334,6 +354,10 @@ class MagneticDeclination(QObject):
                     self.Runit = ""
                 else:
                     self.Runit = "mt"
+        if simple_HeightOptions == 1:
+            self.Rheight2 = str("h WGS84 " + str(float(round(self.Rheight, 2))) + " " + str(self.Runit))
+        else:
+            self.Rheight2 = ""
         #
         #TYPE BASED CALCULATION
         self.Rdeclination = geomag.declination(float(self.simple_latitude), float(self.simple_longitude), float(simple_Cheight), date(simple_year,simple_month,simple_day))
@@ -365,8 +389,6 @@ class MagneticDeclination(QObject):
         degrees = int(abs(self.Rdeclination))
         minutes = (int(abs(60 * (self.Rdeclination - degrees)))) % 60
         self.vAr = (unicode(str(degrees) + u'\u00B0' + str(minutes) + u'\u2032'))
-        #
-        self.Rdate = date(simple_year,simple_month,simple_day)
         #
         if simple_XtoMagnetic == 1:
             Rheading = (float(self.Rdeclination) + float(simple_heading)) % 360 
@@ -416,8 +438,7 @@ class MagneticDeclination(QObject):
             #
             self.iface.mapCanvas().setCenter(self.pointRose)
             self.iface.mapCanvas().refresh ()
-
-
+            #
             #RUBBER
             self.OriX = self.pointRose.x()
             self.OriY = self.pointRose.y()
@@ -506,7 +527,7 @@ class MagneticDeclination(QObject):
         #
         feat = QgsFeature()
         feat.setGeometry(QgsGeometry.fromPoint(self.pointRose))
-        vaLue = (unicode(("VAR " + unicode(self.vAr) + str(self.Rdirection) + "\n" + "(" + str(str(self.Rdate)) + ")" + "\n\n\n\n" + "h WGS84 " + str(float(round(self.Rheight, 2))) + " " + str(self.Runit) + "\n" + "ANNUAL " + str(self.Rlevel) + unicode(self.annual))))
+        vaLue = (unicode(("VAR " + unicode(self.vAr) + str(self.Rdirection) + "\n" + "(" + str(str(self.Rdate2)) + ")" + "\n\n\n\n" + str(self.Rheight2) + "\n" + "ANNUAL " + str(self.Rlevel) + unicode(self.annual))))
         #
         feat.setAttributes([
             self.simple_longitude,
@@ -525,11 +546,15 @@ class MagneticDeclination(QObject):
         svgStyleTN ['size_unit'] = 'MapUnit'
         svgStyleTN ['size'] = str(self.distance)
         svgStyleTN ['angle_expression'] = '0'
+        svgStyleTN ['outline_color'] = str(self.NameColor)
+        svgStyleTN ['color'] = str(self.NameColor)
         svgStyleMN = {}
         svgStyleMN ['name'] = str(str(self.plugin_dir) + str("/Modern_nautical_compass_rose_MN.svg"))
         svgStyleMN ['size_unit'] = 'MapUnit'
         svgStyleMN ['size'] = str(self.distance)
         svgStyleMN ['angle_expression'] = 'Declinatio'
+        svgStyleMN ['outline_color'] = str(self.NameColor)
+        svgStyleMN ['color'] = str(self.NameColor)
         #
         layerTN = QgsSvgMarkerSymbolLayerV2.create(svgStyleTN)
         layerMN = QgsSvgMarkerSymbolLayerV2.create(svgStyleMN)
@@ -545,7 +570,7 @@ class MagneticDeclination(QObject):
         palyr.placement = int(1)
         palyr.QuadrantPosition = int(4)
         palyr.setDataDefinedProperty(QgsPalLayerSettings.Family, True, True, "'Arial Black'",'')
-        palyr.textColor = QColor(229 ,0 ,131)
+        palyr.textColor = QColor(self.red, self.green, self.blue)#(229,0,131)
         palyr.fontSizeInMapUnits = True
         palyr.multilineAlign = int(1)
         palyr.Rotation = float(self.Rdeclination)*-1
@@ -556,6 +581,24 @@ class MagneticDeclination(QObject):
         #
         QgsMapLayerRegistry.instance().addMapLayer(pointLayer)
         self.iface.mapCanvas().refresh()
+
+
+    def simple_Kolors(self):
+        self.dlg.hide()
+        self.NameColor = QColorDialog().getColor(QColor(self.red, self.green, self.blue)).name()
+        self.dlg.show()
+        #
+        self.dlg.color_groupBox.setStyleSheet(str("background-color:") + self.NameColor + str(";"))
+        self.dlg.color_lineEdit.setText(self.NameColor)
+        #
+        value = self.NameColor.lstrip('#')
+        R1 = value[0:2]
+        G2 = value[2:4]
+        B3 = value[4:6]
+        self.red = int(R1, 16)
+        self.green = int(G2, 16)
+        self.blue = int(B3, 16)
+        
 
 
     def simple_Cancel(self):
