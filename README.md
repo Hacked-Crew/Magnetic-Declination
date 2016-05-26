@@ -19,11 +19,11 @@ Use "geomag package"
 by Christopher Weiss 
 https://github.com/cmweiss/geomag
 (Adapted from the geomagc software and World Magnetic Model of the NOAA Satellite and Information Service, National Geophysical Data Center
-http://www.ngdc.noaa.gov/geomag/WMM/DoDWMM.shtm)
+http://www.ngdc.noaa.gov/geomag/WMM/)
 
 
 __author__ = 'Aldo Scorza'
 
-__date__ = '2015-05-26'
+__date__ = '2016-05-26'
 
 __copyright__ = '(C) 2015, Aldo Scorza'
