@@ -22,6 +22,7 @@ email=hacked.crew@gmail.com
 
 # Uncomment the following line and add your changelog:
 changelog=
+    1.7.3 fix homepage URL
     1.7.2 minor UI changes, minor python package updates
     1.7.0 added Compass Rose OPTIONS: custom color, date format (YYYY) or (YY-MM-DD), hide/show height
     1.4.0 more Compass Rose enhancement, now conformal; added annual variation; minor UI changes
