@@ -19,19 +19,19 @@
  ***************************************************************************/
 """
 __author__ = 'Aldo Scorza'
-__date__ = '2015-05-01'
+__date__ = '2019-02-14'
 __copyright__ = '(C) 2015, Aldo Scorza'
 
 
 import os
 
-from PyQt4 import QtGui, uic, QtCore
+from qgis.PyQt import QtGui, uic, QtCore, QtWidgets
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'Magnetic_declination_dialog_base.ui'))
 
 
-class MagneticDeclinationDialog(QtGui.QDialog, FORM_CLASS):
+class MagneticDeclinationDialog(QtWidgets.QDialog, FORM_CLASS):
     def __init__(self, parent=None):
         """Constructor."""
         super(MagneticDeclinationDialog, self).__init__(parent)

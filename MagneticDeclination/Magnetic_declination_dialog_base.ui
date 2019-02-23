@@ -102,7 +102,7 @@
     <rect>
      <x>10</x>
      <y>60</y>
-     <width>460</width>
+     <width>455</width>
      <height>301</height>
     </rect>
    </property>
@@ -124,7 +124,7 @@
     <widget class="QPushButton" name="Calculate_Button">
      <property name="geometry">
       <rect>
-       <x>358</x>
+       <x>354</x>
        <y>191</y>
        <width>91</width>
        <height>33</height>
@@ -149,7 +149,7 @@
     <widget class="QPushButton" name="FromMap_Button">
      <property name="geometry">
       <rect>
-       <x>338</x>
+       <x>334</x>
        <y>10</y>
        <width>112</width>
        <height>41</height>
@@ -172,7 +172,7 @@ from map</string>
     <widget class="QLabel" name="longitude_label">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>6</x>
        <y>0</y>
        <width>161</width>
        <height>20</height>
@@ -198,7 +198,7 @@ from map</string>
     <widget class="QPushButton" name="Compass_Button">
      <property name="geometry">
       <rect>
-       <x>253</x>
+       <x>255</x>
        <y>191</y>
        <width>91</width>
        <height>78</height>
@@ -222,7 +222,7 @@ rose</string>
     <widget class="QPushButton" name="Cancel_Button">
      <property name="geometry">
       <rect>
-       <x>358</x>
+       <x>354</x>
        <y>236</y>
        <width>91</width>
        <height>33</height>
@@ -244,7 +244,7 @@ rose</string>
     <widget class="QLabel" name="latitude_label">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>176</x>
        <y>0</y>
        <width>148</width>
        <height>20</height>
@@ -264,15 +264,15 @@ rose</string>
     <widget class="QGroupBox" name="result_groupBox">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>6</x>
        <y>177</y>
-       <width>236</width>
-       <height>95</height>
+       <width>241</width>
+       <height>91</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>9</pointsize>
       </font>
      </property>
      <property name="title">
@@ -281,8 +281,8 @@ rose</string>
      <widget class="QLineEdit" name="declination_lineEdit">
       <property name="geometry">
        <rect>
-        <x>102</x>
-        <y>29</y>
+        <x>111</x>
+        <y>30</y>
         <width>121</width>
         <height>20</height>
        </rect>
@@ -301,6 +301,9 @@ rose</string>
       <property name="text">
        <string/>
       </property>
+      <property name="maxLength">
+       <number>16</number>
+      </property>
       <property name="readOnly">
        <bool>true</bool>
       </property>
@@ -308,8 +311,8 @@ rose</string>
      <widget class="QLineEdit" name="heading_lineEdit">
       <property name="geometry">
        <rect>
-        <x>102</x>
-        <y>62</y>
+        <x>111</x>
+        <y>63</y>
         <width>121</width>
         <height>20</height>
        </rect>
@@ -322,6 +325,9 @@ rose</string>
       <property name="focusPolicy">
        <enum>Qt::NoFocus</enum>
       </property>
+      <property name="maxLength">
+       <number>16</number>
+      </property>
       <property name="readOnly">
        <bool>true</bool>
       </property>
@@ -329,8 +335,8 @@ rose</string>
      <widget class="QLabel" name="heading_label">
       <property name="geometry">
        <rect>
-        <x>2</x>
-        <y>68</y>
+        <x>6</x>
+        <y>67</y>
         <width>101</width>
         <height>16</height>
        </rect>
@@ -349,8 +355,8 @@ rose</string>
      <widget class="QLabel" name="declination_label">
       <property name="geometry">
        <rect>
-        <x>2</x>
-        <y>36</y>
+        <x>6</x>
+        <y>35</y>
         <width>71</width>
         <height>16</height>
        </rect>
@@ -370,7 +376,7 @@ rose</string>
     <widget class="QGroupBox" name="type_groupBox">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>6</x>
        <y>48</y>
        <width>151</width>
        <height>125</height>
@@ -378,7 +384,7 @@ rose</string>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>9</pointsize>
       </font>
      </property>
      <property name="title">
@@ -388,9 +394,9 @@ rose</string>
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>19</y>
+        <y>17</y>
         <width>125</width>
-        <height>21</height>
+        <height>27</height>
        </rect>
       </property>
       <property name="font">
@@ -410,9 +416,9 @@ rose</string>
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>39</y>
+        <y>37</y>
         <width>120</width>
-        <height>21</height>
+        <height>27</height>
        </rect>
       </property>
       <property name="font">
@@ -432,9 +438,9 @@ rose</string>
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>59</y>
+        <y>60</y>
         <width>122</width>
-        <height>30</height>
+        <height>36</height>
        </rect>
       </property>
       <property name="font">
@@ -459,7 +465,7 @@ rose</string>
       <property name="geometry">
        <rect>
         <x>70</x>
-        <y>92</y>
+        <y>95</y>
         <width>71</width>
         <height>24</height>
        </rect>
@@ -469,6 +475,9 @@ rose</string>
         <pointsize>10</pointsize>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
+      </property>
       <property name="layoutDirection">
        <enum>Qt::RightToLeft</enum>
       </property>
@@ -477,6 +486,9 @@ rose</string>
       </property>
       <property name="suffix">
        <string>°</string>
+      </property>
+      <property name="minimum">
+       <double>-360.000000000000000</double>
       </property>
       <property name="maximum">
        <double>360.000000000000000</double>
@@ -489,7 +501,7 @@ rose</string>
     <widget class="QDoubleSpinBox" name="longitude_doubleSpinBox">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>6</x>
        <y>20</y>
        <width>151</width>
        <height>24</height>
@@ -499,6 +511,9 @@ rose</string>
       <font>
        <pointsize>10</pointsize>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>IBeamCursor</cursorShape>
      </property>
      <property name="buttonSymbols">
       <enum>QAbstractSpinBox::NoButtons</enum>
@@ -519,7 +534,7 @@ rose</string>
     <widget class="QDoubleSpinBox" name="latitude_doubleSpinBox">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>176</x>
        <y>20</y>
        <width>151</width>
        <height>24</height>
@@ -529,6 +544,9 @@ rose</string>
       <font>
        <pointsize>10</pointsize>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>IBeamCursor</cursorShape>
      </property>
      <property name="buttonSymbols">
       <enum>QAbstractSpinBox::NoButtons</enum>
@@ -552,7 +570,7 @@ rose</string>
      </property>
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>176</x>
        <y>50</y>
        <width>268</width>
        <height>63</height>
@@ -560,7 +578,7 @@ rose</string>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>9</pointsize>
       </font>
      </property>
      <property name="title">
@@ -579,7 +597,7 @@ rose</string>
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>32</y>
+        <y>35</y>
         <width>42</width>
         <height>24</height>
        </rect>
@@ -588,6 +606,9 @@ rose</string>
        <font>
         <pointsize>10</pointsize>
        </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
       </property>
       <property name="frame">
        <bool>true</bool>
@@ -603,7 +624,7 @@ rose</string>
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>32</y>
+        <y>35</y>
         <width>42</width>
         <height>24</height>
        </rect>
@@ -612,6 +633,9 @@ rose</string>
        <font>
         <pointsize>10</pointsize>
        </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
       </property>
       <property name="minimum">
        <number>1</number>
@@ -627,7 +651,7 @@ rose</string>
       <property name="geometry">
        <rect>
         <x>90</x>
-        <y>32</y>
+        <y>35</y>
         <width>61</width>
         <height>24</height>
        </rect>
@@ -636,6 +660,9 @@ rose</string>
        <font>
         <pointsize>10</pointsize>
        </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>ArrowCursor</cursorShape>
       </property>
       <property name="minimum">
        <number>2014</number>
@@ -648,7 +675,7 @@ rose</string>
       <property name="geometry">
        <rect>
         <x>140</x>
-        <y>16</y>
+        <y>19</y>
         <width>21</width>
         <height>16</height>
        </rect>
@@ -656,8 +683,8 @@ rose</string>
       <property name="font">
        <font>
         <family>Arial</family>
-        <pointsize>9</pointsize>
-        <italic>true</italic>
+        <pointsize>8</pointsize>
+        <italic>false</italic>
        </font>
       </property>
       <property name="text">
@@ -668,7 +695,7 @@ rose</string>
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>16</y>
+        <y>19</y>
         <width>21</width>
         <height>16</height>
        </rect>
@@ -676,8 +703,8 @@ rose</string>
       <property name="font">
        <font>
         <family>Arial</family>
-        <pointsize>9</pointsize>
-        <italic>true</italic>
+        <pointsize>8</pointsize>
+        <italic>false</italic>
        </font>
       </property>
       <property name="text">
@@ -688,7 +715,7 @@ rose</string>
       <property name="geometry">
        <rect>
         <x>80</x>
-        <y>16</y>
+        <y>19</y>
         <width>21</width>
         <height>16</height>
        </rect>
@@ -696,8 +723,8 @@ rose</string>
       <property name="font">
        <font>
         <family>Arial</family>
-        <pointsize>9</pointsize>
-        <italic>true</italic>
+        <pointsize>8</pointsize>
+        <italic>false</italic>
        </font>
       </property>
       <property name="text">
@@ -708,7 +735,7 @@ rose</string>
     <widget class="QGroupBox" name="height_groupBox">
      <property name="geometry">
       <rect>
-       <x>180</x>
+       <x>176</x>
        <y>118</y>
        <width>268</width>
        <height>55</height>
@@ -716,7 +743,7 @@ rose</string>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>9</pointsize>
       </font>
      </property>
      <property name="title">
@@ -732,7 +759,7 @@ rose</string>
       <property name="geometry">
        <rect>
         <x>103</x>
-        <y>16</y>
+        <y>18</y>
         <width>51</width>
         <height>21</height>
        </rect>
@@ -754,7 +781,7 @@ rose</string>
       <property name="geometry">
        <rect>
         <x>160</x>
-        <y>16</y>
+        <y>18</y>
         <width>61</width>
         <height>21</height>
        </rect>
@@ -776,7 +803,7 @@ rose</string>
       <property name="geometry">
        <rect>
         <x>9</x>
-        <y>20</y>
+        <y>22</y>
         <width>86</width>
         <height>24</height>
        </rect>
@@ -806,7 +833,7 @@ rose</string>
       <property name="geometry">
        <rect>
         <x>103</x>
-        <y>34</y>
+        <y>36</y>
         <width>161</width>
         <height>20</height>
        </rect>
@@ -845,16 +872,22 @@ rose</string>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>9</pointsize>
       </font>
      </property>
      <property name="title">
       <string>Compass Rose COLOR</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
      <property name="flat">
       <bool>false</bool>
      </property>
      <widget class="QLineEdit" name="color_lineEdit">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>94</x>
@@ -868,11 +901,23 @@ rose</string>
         <pointsize>10</pointsize>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>IBeamCursor</cursorShape>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
       <property name="focusPolicy">
-       <enum>Qt::StrongFocus</enum>
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="acceptDrops">
+       <bool>false</bool>
       </property>
       <property name="whatsThis">
        <string/>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhExclusiveInputMask</set>
       </property>
       <property name="inputMask">
        <string>&gt;\#HHHHHH</string>
@@ -942,7 +987,7 @@ rose</string>
        </rect>
       </property>
       <property name="text">
-       <string>Select</string>
+       <string>Change</string>
       </property>
      </widget>
      <widget class="QGroupBox" name="color_groupBox">
@@ -963,6 +1008,9 @@ rose</string>
      </widget>
     </widget>
     <widget class="QGroupBox" name="showDate_groupBox">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -973,11 +1021,18 @@ rose</string>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>9</pointsize>
+       <kerning>true</kerning>
       </font>
      </property>
      <property name="title">
       <string>Compass Rose EPOCH</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
      </property>
      <widget class="QLabel" name="date_label">
       <property name="geometry">
@@ -985,7 +1040,7 @@ rose</string>
         <x>10</x>
         <y>17</y>
         <width>418</width>
-        <height>31</height>
+        <height>40</height>
        </rect>
       </property>
       <property name="font">
@@ -1019,7 +1074,7 @@ e.g.(01-01-2015, 01-01-2016, etc). Be sure of your choice!</string>
         <x>10</x>
         <y>49</y>
         <width>87</width>
-        <height>21</height>
+        <height>30</height>
        </rect>
       </property>
       <property name="font">
@@ -1038,7 +1093,7 @@ e.g.(01-01-2015, 01-01-2016, etc). Be sure of your choice!</string>
         <x>110</x>
         <y>50</y>
         <width>98</width>
-        <height>21</height>
+        <height>30</height>
        </rect>
       </property>
       <property name="font">
@@ -1066,7 +1121,7 @@ e.g.(01-01-2015, 01-01-2016, etc). Be sure of your choice!</string>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>9</pointsize>
       </font>
      </property>
      <property name="title">
@@ -1108,8 +1163,8 @@ e.g.(01-01-2015, 01-01-2016, etc). Be sure of your choice!</string>
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>453</width>
-       <height>275</height>
+       <width>450</width>
+       <height>273</height>
       </rect>
      </property>
      <property name="font">
@@ -1128,60 +1183,64 @@ e.g.(01-01-2015, 01-01-2016, etc). Be sure of your choice!</string>
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://hacked-crew.blogspot.com/2015/05/declinazione-geomagnetica.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://hacked-crew.blogspot.com/2015/05/declinazione-geomagnetica.html&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Calculates the magnetic heading from a true geographic heading and vice versa.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Calculates magnetic variation/declination for any latitude/longitude/altitude, for any date. &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Uses the NOAA National Geophysical Data Center, epoch 2015 data.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The World Magnetic Model (WMM) are accurate to within 30 minutes of arc for D and I and about 200 nanoTesla for the intensity elements.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; text-decoration: underline;&quot;&gt;THE AUTHOR IS NOT RESPONSIBLE FOR ANY INCORRECT OR INACCURATE RESULTS.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;USE&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The input parameters and valid entries are:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Latitude&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; color:#666666;&quot;&gt;-90.00&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; to &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; color:#666666;&quot;&gt;+90.00&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; degrees &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Longitude&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; color:#666666;&quot;&gt;-180.00&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; to &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; color:#666666;&quot;&gt;+180.00&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; degrees&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;	or&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Press &amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;LON/LAT from map&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;&amp;quot; and click on canvas to get coordinates.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Altitude&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; in feet (&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; color:#666666;&quot;&gt;-3280.84 to 1968503.94&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;) or meter (&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; color:#666666;&quot;&gt;-10000 to 600000&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;)  referenced to WGS84 ellipsoid&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Date&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;  from &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; color:#666666;&quot;&gt;October 1, 2014&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; to &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; color:#666666;&quot;&gt;December 31, 2019&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#000000;&quot;&gt;Type &lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#000000;&quot;&gt;will choose the working domain, if &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; color:#666666;&quot;&gt;Magnetic&lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#000000;&quot;&gt; or &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; color:#666666;&quot;&gt;True&lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#000000;&quot;&gt;, plus fine Heading adjustment (&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; color:#666666;&quot;&gt;0 to 360&lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#000000;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;	then&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Press &amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Calculate&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;&amp;quot; button to get magnetic declination and heading value from selected North.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Common selection type is True to Magnetic, &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;RESULTS&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;All values refer the  Altitude and Date previously chosen:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Declination&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; = Magnetic declination, sometimes called magnetic variation, is the angle between magnetic north and true north&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Heading&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; = compass value for converted heading&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;DRAW COMPASS ROSE&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Once you get a result, you can impress on map a  &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;conformal Nautical Compass Rose&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;  with obtained values, at desired scale.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Compass Rose will contain:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Declination&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Epoch&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Height&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Annual Variation&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; (&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; color:#666666;&quot;&gt;referenced to Epoch&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Anytime you impress the compass, a point feature with attributes is saved in a memory layer. The RAW data in attributes table have greater precision compared to the  same impressed in the &amp;quot;compass rose&amp;quot;.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;OPTIONS&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Compass Rose COLOR:&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; set compass color, applied to next generated compasses&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Compass Rose EPOCH&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;: set epoch format, conformal &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; color:#666666;&quot;&gt;(YYYY)&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; only for dates calculated at beginning of the year, or  more precise &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-style:italic; color:#666666;&quot;&gt;(YYYY-MM-DD)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#000000;&quot;&gt;Compass Rose HEIGHT: &lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#000000;&quot;&gt;set if reference height is showed or not&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;OK, AND NOW?&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Press &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Cancel&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; or get another yet point, and yet, and yet...&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Future improvements are planned ;)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Appreciate my work? Please consider making a donation&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://hacked-crew.blogspot.com/p/blog-page_25.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://hacked-crew.blogspot.com/p/blog-page_25.html&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://hacked-crew.blogspot.com/2015/05/declinazione-geomagnetica.html&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;https://hacked-crew.blogspot.com/2015/05/declinazione-geomagnetica.html&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Calculates the magnetic heading from a true geographic heading and vice versa.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Calculates magnetic variation/declination for any latitude/longitude/altitude, for any date. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Uses the NOAA National Geophysical Data Center, epoch 2015 data.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;The World Magnetic Model (WMM) are accurate to within 30 minutes of arc for D and I and about 200 nanoTesla for the intensity elements.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;THE AUTHOR IS NOT RESPONSIBLE FOR ANY INCORRECT OR INACCURATE RESULTS.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;USE&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;The input parameters and valid entries are:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Latitude&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic; color:#666666;&quot;&gt;-90.00&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; to &lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic; color:#666666;&quot;&gt;+90.00&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; degrees &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Longitude&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic; color:#666666;&quot;&gt;-180.00&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; to &lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic; color:#666666;&quot;&gt;+180.00&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; degrees&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	OR&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Press &amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;LON/LAT from map&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;&amp;quot; and click on canvas to get coordinates.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Altitude&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; in feet (&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic; color:#666666;&quot;&gt;-3280.84 to 1968503.94&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;) or meter (&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic; color:#666666;&quot;&gt;-10000 to 600000&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;)  referenced to WGS84 ellipsoid&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Date&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;  from &lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic; color:#666666;&quot;&gt;October 1, 2014&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; to &lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic; color:#666666;&quot;&gt;December 31, 2019&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600; color:#000000;&quot;&gt;Type &lt;/span&gt;&lt;span style=&quot; font-size:9pt; color:#000000;&quot;&gt;will choose the working domain, if &lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic; color:#666666;&quot;&gt;Magnetic&lt;/span&gt;&lt;span style=&quot; font-size:9pt; color:#000000;&quot;&gt; or &lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic; color:#666666;&quot;&gt;True&lt;/span&gt;&lt;span style=&quot; font-size:9pt; color:#000000;&quot;&gt;, plus fine Heading adjustment (&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic; color:#666666;&quot;&gt;0 to 360&lt;/span&gt;&lt;span style=&quot; font-size:9pt; color:#000000;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;	THEN&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Press &amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Calculate&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;&amp;quot; button to get magnetic declination and heading value from selected North.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Common selection type is True to Magnetic, &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;RESULTS&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;All values refer the  Altitude and Date previously chosen:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Declination&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; = Magnetic declination, sometimes called magnetic variation, is the angle between magnetic north and true north&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Heading&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; = compass value for converted heading&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;DRAW COMPASS ROSE&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Once you get a result, you can impress on map a  &lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;conformal Nautical Compass Rose&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;  with obtained values, at desired scale.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Compass Rose will contain:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Declination&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Epoch&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Height&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Annual Variation&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; (&lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic; color:#666666;&quot;&gt;referenced to Epoch&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Anytime you impress the compass, a point feature with attributes is saved in a memory layer. The RAW data in attributes table have greater precision compared to the  same impressed in the &amp;quot;compass rose&amp;quot;.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;OPTIONS&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt; font-weight:600;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Compass Rose COLOR:&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; set compass color, applied to next generated compasses&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Compass Rose EPOCH&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;: set epoch format, conformal &lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic; color:#666666;&quot;&gt;(YYYY)&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; only for dates calculated at beginning of the year, or  more precise &lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-style:italic; color:#666666;&quot;&gt;(YYYY-MM-DD)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600; color:#000000;&quot;&gt;Compass Rose HEIGHT: &lt;/span&gt;&lt;span style=&quot; font-size:9pt; color:#000000;&quot;&gt;set if reference height is showed or not&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;OK,  WHAT NOW?&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Press &lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;Cancel&lt;/span&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt; or get another yet point, and yet, and yet...&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Future improvements are planned ;)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600; color:#004200;&quot;&gt;Appreciate my work? Please consider making a donation&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://paypal.me/pools/c/8cpB6vAiKm&quot;&gt;&lt;img src=&quot;:/img/logo_paypal_carte_oriz.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://paypal.me/pools/c/8cpB6vAiKm&quot;&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline; color:#de9400;&quot;&gt;Make me proud&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://hacked-crew.blogspot.com/p/blog-page_25.html&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0000ff;&quot;&gt;https://hacked-crew.blogspot.com/p/blog-page_25.html&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="openExternalLinks">
       <bool>true</bool>
@@ -1197,8 +1256,8 @@ p, li { white-space: pre-wrap; }
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>453</width>
-       <height>275</height>
+       <width>450</width>
+       <height>273</height>
       </rect>
      </property>
      <property name="font">
@@ -1217,18 +1276,22 @@ p, li { white-space: pre-wrap; }
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Appreciate my work? Please consider making a donation&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://hacked-crew.blogspot.com/p/blog-page_25.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://hacked-crew.blogspot.com/p/blog-page_25.html&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt;&quot;&gt;Author: &lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:600; font-style:italic;&quot;&gt;Aldo Scorza&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt;&quot;&gt;hacked.crew@gmail.com&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://hacked-crew.blogspot.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://hacked-crew.blogspot.com/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt;&quot;&gt;geomag package&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt;&quot;&gt;by &lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:600; font-style:italic;&quot;&gt;Christopher Weiss&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/cmweiss/geomag&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;https://github.com/cmweiss/geomag&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt;&quot;&gt;(Adapted from the geomagc software and World Magnetic Model of the NOAA Satellite and Information Service, National Geophysical Data Center&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://www.ngdc.noaa.gov/geomag/WMM/DoDWMM.shtm&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.ngdc.noaa.gov/geomag/WMM/DoDWMM.shtm&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600; color:#004200;&quot;&gt;Appreciate my work? Please consider making a donation&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://paypal.me/pools/c/8cpB6vAiKm&quot;&gt;&lt;img src=&quot;:/img/logo_paypal_carte_oriz.png&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://paypal.me/pools/c/8cpB6vAiKm&quot;&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline; color:#de9400;&quot;&gt;Make me proud&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://hacked-crew.blogspot.com/p/blog-page_25.html&quot;&gt;&lt;span style=&quot; font-size:8pt; text-decoration: underline; color:#0000ff;&quot;&gt;https://hacked-crew.blogspot.com/p/blog-page_25.html&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:9pt;&quot;&gt;Author: &lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:9pt; font-weight:600; font-style:italic;&quot;&gt;Aldo Scorza&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:9pt;&quot;&gt;hacked.crew@gmail.com&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://hacked-crew.blogspot.com/&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;https://hacked-crew.blogspot.com/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:9pt;&quot;&gt;geomag package by &lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:9pt; font-weight:600; font-style:italic;&quot;&gt;Christopher Weiss&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:9pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://github.com/cmweiss/geomag&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;https://github.com/cmweiss/geomag&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:9pt;&quot;&gt;(Adapted from the geomagc software and World Magnetic Model of the NOAA Satellite and Information Service, National Geophysical Data Center&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;http://www.ngdc.noaa.gov/geomag/WMM/DoDWMM.shtm&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;http://www.ngdc.noaa.gov/geomag/WMM/DoDWMM.shtm&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:9pt;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;WMM Coefficient file by &lt;/span&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;NOAA&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;National Centers for Environmental Information (NCEI) &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://www.ngdc.noaa.gov/ngdc.html&quot;&gt;&lt;span style=&quot; font-size:9pt; text-decoration: underline; color:#0000ff;&quot;&gt;https://www.ngdc.noaa.gov/ngdc.html&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="openExternalLinks">
       <bool>true</bool>
@@ -1253,6 +1316,8 @@ p, li { white-space: pre-wrap; }
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.rc"/>
+ </resources>
  <connections/>
 </ui>

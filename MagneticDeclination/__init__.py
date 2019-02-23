@@ -20,7 +20,7 @@
  This script initializes the plugin, making it known to QGIS.
 """
 __author__ = 'Aldo Scorza'
-__date__ = '2015-05-01'
+__date__ = '2019-02-13'
 __copyright__ = '(C) 2015, Aldo Scorza'
 
 

@@ -8,11 +8,11 @@
 
 [general]
 name=Magnetic Declination
-qgisMinimumVersion=2.6
+qgisMinimumVersion=3.0
 description=Calculates the magnetic heading from a true geographic heading and vice versa.
 about=Uses the NOAA National Geophysical Data Center, epoch 2015 data.
     The World Magnetic Model (WMM) are accurate to within 30 minutes of arc for D and I and about 200 nanoTesla for the intensity elements.
-version=1.7.2
+version=2.0.0
 author=Aldo Scorza
 email=hacked.crew@gmail.com
 
@@ -22,7 +22,7 @@ email=hacked.crew@gmail.com
 
 # Uncomment the following line and add your changelog:
 changelog=
-    1.7.3 fix homepage URL
+    2.0.0 major release: Python3 upgrade, new API, minor UI changes, some bug fixes, update WMM Coefficient
     1.7.2 minor UI changes, minor python package updates
     1.7.0 added Compass Rose OPTIONS: custom color, date format (YYYY) or (YY-MM-DD), hide/show height
     1.4.0 more Compass Rose enhancement, now conformal; added annual variation; minor UI changes
@@ -32,13 +32,13 @@ changelog=
     1.0.0 initial release
 
 # Tags are comma separated with spaces allowed
-tags=topography, calculator, time, magnetic, north, bearing, compass, declination
+tags=topography, calculator, magnetic, north, bearing, compass, declination, world magnetic model, rose
 
-homepage=https://hacked-crew.blogspot.com/2015/05/declinazione-geomagnetica.html
+homepage=http:https://hacked-crew.blogspot.com/2015/05/declinazione-geomagnetica.html
 tracker=https://github.com/Hacked-Crew/Magnetic-Declination/issues
 repository=https://github.com/Hacked-Crew/Magnetic-Declination
 category=Plugins
-icon=icon.png
+icon=img/icon.png
 # experimental flag
 experimental=False
 

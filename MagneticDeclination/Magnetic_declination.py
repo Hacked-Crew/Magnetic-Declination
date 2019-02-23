@@ -18,18 +18,24 @@
  *                                                                         *
  ***************************************************************************/
 """
+from __future__ import absolute_import
+from builtins import str
+
+
 __author__ = 'Aldo Scorza'
-__date__ = '2015-05-26'
+__date__ = '2019-02-22'
 __copyright__ = '(C) 2015, Aldo Scorza'
 
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from qgis.PyQt.QtCore import QObject, QSettings, QVariant, QCoreApplication
+from qgis.PyQt.QtWidgets import QDialog, QAction, QColorDialog, QMessageBox
+from qgis.PyQt.QtGui import QIcon, QColor
 # Initialize Qt resources from file resources.py
-import resources
+from . import resources
+import traceback
 
 # Import the code for the dialog
-from Magnetic_declination_dialog import MagneticDeclinationDialog
+from .Magnetic_declination_dialog import MagneticDeclinationDialog
 import os.path
 # IMPORT OTHER
 from datetime import *
@@ -197,7 +203,7 @@ class MagneticDeclination(QObject):
 
     def initGui(self):
         """Create the menu entries and toolbar icons inside the QGIS GUI."""
-        icon_path = self.plugin_dir + "/icon.png"
+        icon_path = self.plugin_dir + "/img/icon.png"
         self.add_action(
             icon_path,
             text=self.tr(u'Magnetic Declination'),
@@ -322,6 +328,11 @@ class MagneticDeclination(QObject):
             simple_year = date.today().year
             simple_month = date.today().month
             simple_day = date.today().day
+        try:
+          date(simple_year,simple_month,simple_day)
+        except Exception:
+          self.formatted_lines = traceback.format_exc().splitlines()
+          return MagneticDeclination.date_Error(self)
         self.Rdate = date(simple_year,simple_month,simple_day)
         #
         if simple_year == 2019:
@@ -382,22 +393,22 @@ class MagneticDeclination(QObject):
         varDegrees = int(abs(self.RdecliVar))
         varMinutes = (int(abs(60 * (self.RdecliVar - varDegrees)))) % 60
         if  varDegrees == 0:
-            self.annual = (unicode(str(varMinutes) + u'\u2032'))
+            self.annual = (str(varMinutes) + u'\u2032')
         else:
-            self.annual = (unicode(str(varDegrees) + u'\u00B0' + str(varMinutes) + u'\u2032'))
+            self.annual = (str(varDegrees) + u'\u00B0' + str(varMinutes) + u'\u2032')
         #
         degrees = int(abs(self.Rdeclination))
         minutes = (int(abs(60 * (self.Rdeclination - degrees)))) % 60
-        self.vAr = (unicode(str(degrees) + u'\u00B0' + str(minutes) + u'\u2032'))
+        self.vAr = (str(degrees) + u'\u00B0' + str(minutes) + u'\u2032')
         #
         if simple_XtoMagnetic == 1:
             Rheading = (float(self.Rdeclination) + float(simple_heading)) % 360 
         else:
             Rheading = geomag.mag_heading(float(simple_heading), float(self.simple_latitude), float(self.simple_longitude), float(simple_Cheight), date(simple_year,simple_month,simple_day))
         #
-        self.dlg.declination_lineEdit.setText(unicode(str(self.Rdeclination) + u'\u00B0'))
-        self.dlg.heading_lineEdit.setText(unicode(str(Rheading) + u'\u00B0'))
-        convPoint = QgsCoordinateTransform(self.pluginCRS, self.canvasCRS).transform(QgsPoint(float(self.simple_longitude), float(self.simple_latitude)))
+        self.dlg.declination_lineEdit.setText(str(self.Rdeclination) + u'\u00B0')
+        self.dlg.heading_lineEdit.setText(str(Rheading) + u'\u00B0')
+        convPoint = QgsCoordinateTransform(self.pluginCRS, self.canvasCRS, QgsProject.instance()).transform(QgsPointXY(float(self.simple_longitude), float(self.simple_latitude)))
         self.xX = float(convPoint.x())
         self.yY = float(convPoint.y())
         self.calcSense = 1
@@ -406,10 +417,10 @@ class MagneticDeclination(QObject):
     def simple_FromMap(self):
     #SELECT COORDS
         self.pointEmitter = QgsMapToolEmitPoint(self.iface.mapCanvas())
-        QObject.connect( self.pointEmitter, SIGNAL("canvasClicked(const QgsPoint, Qt::MouseButton)"), self.simple_Point)
+        self.pointEmitter.canvasClicked.connect(self.simple_Point)
         self.iface.mapCanvas().setMapTool( self.pointEmitter )
         self.dlg.hide()
-        self.iface.messageBar().pushMessage("", "Waiting for COORDINATES", level=QgsMessageBar.WARNING,)
+        self.iface.messageBar().pushMessage("", "Waiting for COORDINATES", level=1,)
 
 
     def simple_Point(self, point, button):
@@ -417,10 +428,10 @@ class MagneticDeclination(QObject):
         self.x = point.x()
         self.y = point.y()
         self.canvasCRS = self.iface.mapCanvas().mapSettings().destinationCrs()
-        convPoint = QgsCoordinateTransform(self.canvasCRS, self.pluginCRS).transform(QgsPoint(self.x, self.y))
+        convPoint = QgsCoordinateTransform(self.canvasCRS, self.pluginCRS, QgsProject.instance()).transform(QgsPointXY(self.x, self.y))
         self.dlg.longitude_doubleSpinBox.setValue(float(convPoint.x()))
         self.dlg.latitude_doubleSpinBox.setValue(float(convPoint.y()))
-        QObject.disconnect( self.pointEmitter, SIGNAL("canvasClicked(const QgsPoint, Qt::MouseButton)"), self.simple_Point)
+        self.pointEmitter.canvasClicked.disconnect(self.simple_Point)
         self.dlg.show()
         self.iface.messageBar().clearWidgets ()
         self.SenseFromMap = 1
@@ -432,9 +443,9 @@ class MagneticDeclination(QObject):
             QMessageBox.warning( self.iface.mainWindow(),"WARNING", "No value calculated" )
         else:
             if self.SenseFromMap == 1:
-                self.pointRose = QgsPoint(self.x, self.y)
+                self.pointRose = QgsPointXY(self.x, self.y)
             else:
-                self.pointRose = QgsPoint(self.xX, self.yY)
+                self.pointRose = QgsPointXY(self.xX, self.yY)
             #
             self.iface.mapCanvas().setCenter(self.pointRose)
             self.iface.mapCanvas().refresh ()
@@ -443,11 +454,11 @@ class MagneticDeclination(QObject):
             self.OriX = self.pointRose.x()
             self.OriY = self.pointRose.y()
             #
-            self.rubberCenter = QgsRubberBand(self.iface.mapCanvas(),QGis.Point)
-            self.rubberRadius = QgsRubberBand(self.iface.mapCanvas(),QGis.Line )
-            self.rubberGhost1 = QgsRubberBand(self.iface.mapCanvas(),QGis.Line )
-            self.rubberGhost2 = QgsRubberBand(self.iface.mapCanvas(),QGis.Line )
-            self.rubberGhost3 = QgsRubberBand(self.iface.mapCanvas(),QGis.Line )
+            self.rubberCenter = QgsRubberBand(self.iface.mapCanvas(), geometryType=2)
+            self.rubberRadius = QgsRubberBand(self.iface.mapCanvas(), geometryType=3)
+            self.rubberGhost1 = QgsRubberBand(self.iface.mapCanvas(), geometryType=3)
+            self.rubberGhost2 = QgsRubberBand(self.iface.mapCanvas(), geometryType=3)
+            self.rubberGhost3 = QgsRubberBand(self.iface.mapCanvas(), geometryType=3)
             self.rubberCenter.setIconSize(10)
             self.rubberRadius.setWidth(5)
             self.rubberGhost1.setWidth(5)
@@ -464,9 +475,9 @@ class MagneticDeclination(QObject):
             self.rubberGhost2.addPoint(self.pointRose)
             self.rubberGhost3.addPoint(self.pointRose)
             #
-            QObject.connect(self.iface.mapCanvas(), SIGNAL("xyCoordinates(const QgsPoint &)"), self.simple_Scale)
+            self.iface.mapCanvas().xyCoordinates.connect(self.simple_Scale)
             self.dlg.hide()
-            self.iface.messageBar().pushMessage("", "Waiting for SCALE setting", level=QgsMessageBar.WARNING,)
+            self.iface.messageBar().pushMessage("", "Waiting for SCALE setting", level=1,)
 
 
     def simple_Scale(self, point):
@@ -482,18 +493,18 @@ class MagneticDeclination(QObject):
         rubberGhost3X = ((X-self.OriX)*math.cos(math.radians(270))-(Y-self.OriY)*math.sin(math.radians(270))) + self.OriX
         rubberGhost3Y = ((X-self.OriX)*math.sin(math.radians(270))+(Y-self.OriY)*math.cos(math.radians(270))) + self.OriY
         #
-        self.rubberGhost1.movePoint(QgsPoint(rubberGhost1X, rubberGhost1Y))
-        self.rubberGhost2.movePoint(QgsPoint(rubberGhost2X, rubberGhost2Y))
-        self.rubberGhost3.movePoint(QgsPoint(rubberGhost3X, rubberGhost3Y))
+        self.rubberGhost1.movePoint(QgsPointXY(rubberGhost1X, rubberGhost1Y))
+        self.rubberGhost2.movePoint(QgsPointXY(rubberGhost2X, rubberGhost2Y))
+        self.rubberGhost3.movePoint(QgsPointXY(rubberGhost3X, rubberGhost3Y))
         #
         self.pointEmitter = QgsMapToolEmitPoint(self.iface.mapCanvas())
-        QObject.connect( self.pointEmitter, SIGNAL("canvasClicked(const QgsPoint, Qt::MouseButton)"), self.simple_ComputeScale)
+        self.pointEmitter.canvasClicked.connect(self.simple_ComputeScale)
         self.iface.mapCanvas().setMapTool( self.pointEmitter )
 
 
     def simple_ComputeScale(self, point, button):
     #COMPUTE SCALE
-        self.distance = (QgsGeometry().fromPoint(self.pointRose).distance(QgsGeometry().fromPoint(point)))*2
+        self.distance = (QgsGeometry().fromPointXY(self.pointRose).distance(QgsGeometry().fromPointXY(point)))*2
         self.dlg.show()
         self.iface.messageBar().clearWidgets ()
         #
@@ -503,15 +514,15 @@ class MagneticDeclination(QObject):
         self.rubberGhost2.reset()
         self.rubberGhost3.reset()
         #
-        QObject.disconnect(self.iface.mapCanvas(), SIGNAL("xyCoordinates(const QgsPoint &)"), self.simple_Scale)
-        QObject.disconnect( self.pointEmitter, SIGNAL("canvasClicked(const QgsPoint, Qt::MouseButton)"), self.simple_ComputeScale)
+        self.iface.mapCanvas().xyCoordinates.disconnect(self.simple_Scale)
+        self.pointEmitter.canvasClicked.disconnect(self.simple_ComputeScale)
         return MagneticDeclination.simple_Layer(self)
 
 
     def simple_Layer(self):
     #CREATE LAYER
         pointLayer = QgsVectorLayer("Point?crs=" + self.canvasCRS.authid(), "COMPASS ROSE", "memory")
-        pointLayer.startEditing()  
+        pointLayer.startEditing()
         layerData = pointLayer.dataProvider() 
         layerData.addAttributes([
             QgsField("Lon WGS84", QVariant.Double),
@@ -526,8 +537,8 @@ class MagneticDeclination(QObject):
         pointLayer.commitChanges()
         #
         feat = QgsFeature()
-        feat.setGeometry(QgsGeometry.fromPoint(self.pointRose))
-        vaLue = (unicode(("VAR " + unicode(self.vAr) + str(self.Rdirection) + "\n" + "(" + str(str(self.Rdate2)) + ")" + "\n\n\n\n" + str(self.Rheight2) + "\n" + "ANNUAL " + str(self.Rlevel) + unicode(self.annual))))
+        feat.setGeometry(QgsGeometry.fromPointXY(self.pointRose))
+        vaLue = (str(("VAR " + str(self.vAr) + str(self.Rdirection) + "\n" + "(" + str(self.Rdate2) + ")" + "\n\n\n\n" + str(self.Rheight2) + "\n" + "ANNUAL " + str(self.Rlevel) + str(self.annual))))
         #
         feat.setAttributes([
             self.simple_longitude,
@@ -542,44 +553,52 @@ class MagneticDeclination(QObject):
         layerData.addFeatures([feat])
         #
         svgStyleTN = {}
-        svgStyleTN ['name'] = str(str(self.plugin_dir) + str("/Modern_nautical_compass_rose_TN.svg"))
+        svgStyleTN ['name'] = str(str(self.plugin_dir) + str("/img/Modern_nautical_compass_rose_TN.svg"))
         svgStyleTN ['size_unit'] = 'MapUnit'
         svgStyleTN ['size'] = str(self.distance)
         svgStyleTN ['angle_expression'] = '0'
         svgStyleTN ['outline_color'] = str(self.NameColor)
         svgStyleTN ['color'] = str(self.NameColor)
         svgStyleMN = {}
-        svgStyleMN ['name'] = str(str(self.plugin_dir) + str("/Modern_nautical_compass_rose_MN.svg"))
+        svgStyleMN ['name'] = str(str(self.plugin_dir) + str("/img/Modern_nautical_compass_rose_MN.svg"))
         svgStyleMN ['size_unit'] = 'MapUnit'
         svgStyleMN ['size'] = str(self.distance)
         svgStyleMN ['angle_expression'] = 'Declinatio'
         svgStyleMN ['outline_color'] = str(self.NameColor)
         svgStyleMN ['color'] = str(self.NameColor)
         #
-        layerTN = QgsSvgMarkerSymbolLayerV2.create(svgStyleTN)
-        layerMN = QgsSvgMarkerSymbolLayerV2.create(svgStyleMN)
-        pointLayer.rendererV2().symbols()[0].appendSymbolLayer(layerTN)
-        pointLayer.rendererV2().symbols()[0].appendSymbolLayer(layerMN)
-        pointLayer.rendererV2().symbol().symbolLayer(0).setSize(1)
+        layerTN = QgsSvgMarkerSymbolLayer.create(svgStyleTN)
+        layerMN = QgsSvgMarkerSymbolLayer.create(svgStyleMN)
+        pointLayer.renderer().symbols(QgsRenderContext())[0].appendSymbolLayer(layerTN)
+        pointLayer.renderer().symbols(QgsRenderContext())[0].appendSymbolLayer(layerMN)
+        pointLayer.renderer().symbol().symbolLayer(0).setSize(1)#
         #
-        palyr = QgsPalLayerSettings()
-        palyr.readFromLayer(pointLayer)
+        pal_layer=QgsPalLayerSettings()
+        prop=QgsProperty()
+        pc=QgsPropertyCollection('mycollection')
         #
-        palyr.enabled = True
-        palyr.fieldName = "value"
-        palyr.placement = int(1)
-        palyr.QuadrantPosition = int(4)
-        palyr.setDataDefinedProperty(QgsPalLayerSettings.Family, True, True, "'Arial Black'",'')
-        palyr.textColor = QColor(self.red, self.green, self.blue)#(229,0,131)
-        palyr.fontSizeInMapUnits = True
-        palyr.multilineAlign = int(1)
-        palyr.Rotation = float(self.Rdeclination)*-1
-        palyr.setDataDefinedProperty(QgsPalLayerSettings.Size, True, True, str(self.distance*0.020),'')
-        palyr.setDataDefinedProperty(QgsPalLayerSettings.Rotation, True, True, str(float(self.Rdeclination)*-1),'')
-        palyr.displayAll = True
-        palyr.writeToLayer(pointLayer)
+        #settings.drawLabels = True
+        pal_layer.fieldName="value"
+        pal_layer.placement=QgsPalLayerSettings.OverPoint
+        pc.setProperty(pal_layer.Family,"Arial Black")
+        pc.setProperty(pal_layer.Color, QColor(self.red, self.green, self.blue))
+        pc.setProperty(pal_layer.FontSizeUnit, "MapUnit")
+        pc.setProperty(pal_layer.MultiLineAlignment, "Center")
+        pc.setProperty(pal_layer.LabelRotation, float(self.Rdeclination))
+        pc.setProperty(pal_layer.AlwaysShow, int(1))
+        pc.setProperty(pal_layer.IsObstacle, int(0))
+        pc.setProperty(pal_layer.Show, int(1))
+        pc.setProperty(pal_layer.Size, self.distance*0.020)
+        pal_layer.setDataDefinedProperties(pc)
+        pal_layer.enabled=True
+        labeler=QgsVectorLayerSimpleLabeling(pal_layer)
+        pal_layer.showAll=True
+        pal_layer.displayAll=True
+        pointLayer.setLabeling(labeler)
+        pointLayer.setLabelsEnabled(True)
+        pointLayer.triggerRepaint()
         #
-        QgsMapLayerRegistry.instance().addMapLayer(pointLayer)
+        QgsProject.instance().addMapLayer(pointLayer)
         self.iface.mapCanvas().refresh()
 
 
@@ -598,8 +617,10 @@ class MagneticDeclination(QObject):
         self.red = int(R1, 16)
         self.green = int(G2, 16)
         self.blue = int(B3, 16)
-        
 
+
+    def date_Error(self):
+        QMessageBox.warning( self.iface.mainWindow(),"WARNING", self.formatted_lines[-1] )
 
     def simple_Cancel(self):
     #CLOSE
