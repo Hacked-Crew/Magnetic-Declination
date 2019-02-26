@@ -34,7 +34,7 @@ changelog=
 # Tags are comma separated with spaces allowed
 tags=topography, calculator, magnetic, north, bearing, compass, declination, world magnetic model, rose
 
-homepage=http:https://hacked-crew.blogspot.com/2015/05/declinazione-geomagnetica.html
+homepage=https://hacked-crew.blogspot.com/2015/05/declinazione-geomagnetica.html
 tracker=https://github.com/Hacked-Crew/Magnetic-Declination/issues
 repository=https://github.com/Hacked-Crew/Magnetic-Declination
 category=Plugins
