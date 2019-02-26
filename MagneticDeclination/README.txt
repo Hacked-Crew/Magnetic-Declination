@@ -16,7 +16,7 @@
  *                                                                         *
  ***************************************************************************/
 __author__ = 'Aldo Scorza'
-__date__ = '2016-05-26'
+__date__ = '2019-02-26'
 __copyright__ = '(C) 2015, Aldo Scorza'
 
 MAGNETIC DECLINATION PLUGIN FOR QGIS

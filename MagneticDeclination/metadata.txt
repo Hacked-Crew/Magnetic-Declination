@@ -22,6 +22,7 @@ email=hacked.crew@gmail.com
 
 # Uncomment the following line and add your changelog:
 changelog=
+    2.0.1 minor fixes
     2.0.0 major release: Python3 upgrade, new API, minor UI changes, some bug fixes, update WMM Coefficient
     1.7.2 minor UI changes, minor python package updates
     1.7.0 added Compass Rose OPTIONS: custom color, date format (YYYY) or (YY-MM-DD), hide/show height
