@@ -12,7 +12,7 @@ qgisMinimumVersion=3.0
 description=Calculates the magnetic heading from a true geographic heading and vice versa.
 about=Uses the NOAA National Geophysical Data Center, epoch 2015 data.
     The World Magnetic Model (WMM) are accurate to within 30 minutes of arc for D and I and about 200 nanoTesla for the intensity elements.
-version=2.0.0
+version=2.0.1
 author=Aldo Scorza
 email=hacked.crew@gmail.com
 
