@@ -21,9 +21,11 @@ https://github.com/cmweiss/geomag
 (Adapted from the geomagc software and World Magnetic Model of the NOAA Satellite and Information Service, National Geophysical Data Center
 http://www.ngdc.noaa.gov/geomag/WMM/)
 
+Model values by NCEI Geomagnetic Modeling Team and British Geological Survey. 2019. World Magnetic Model 2020. NOAA National Centers for Environmental Information.
+doi: 10.25921/11v3-da71 (https://doi.org/10.25921/11v3-da71), 2020, [date accessed]
 
 __author__ = 'Aldo Scorza'
 
-__date__ = '2019-02-26'
+__date__ = '2019-12-20'
 
 __copyright__ = '(C) 2015, Aldo Scorza'
