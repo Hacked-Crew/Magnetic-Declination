@@ -40,6 +40,7 @@ import os.path
 # IMPORT OTHER
 from datetime import *
 from . import geomag
+from .Magnetic_declination_functions import InitMagDecFunctions, UnloadMagDecFunctions
 from qgis.gui import *
 from qgis.core import *
 import math
@@ -209,6 +210,7 @@ class MagneticDeclination(QObject):
             text=self.tr(u'Magnetic Declination'),
             callback=self.run,
             parent=self.iface.mainWindow())
+        InitMagDecFunctions()
 
 
     def unload(self):
@@ -220,6 +222,7 @@ class MagneticDeclination(QObject):
             self.iface.removeToolBarIcon(action)
         # remove the toolbar
         del self.toolbar
+        UnloadMagDecFunctions()
 
 
     def run(self):
