@@ -13,6 +13,7 @@ the Free Software Foundation; either version 2 of the License, or
 ```
 Calculates the magnetic heading from a true geographic heading and vice versa.
 Impress on map a Nautical Compass Rose (conformal) with obtained values.
+
 A function in the Expression editor retrieve the center-point and crs of a given map within a Print Layout, and return a double representing the magnetic declination (many thanks to Chris Lyon https://github.com/Flushot)
 
 
