@@ -8,11 +8,11 @@
 
 [general]
 name=Magnetic Declination
-qgisMinimumVersion=3.0
+qgisMinimumVersion=3.30
 description=Calculates the magnetic heading from a true geographic heading and vice versa.
 about=Uses the NOAA National Geophysical Data Center, epoch 2020 data.
     The World Magnetic Model (WMM) are accurate to within 30 minutes of arc for D and I and about 200 nanoTesla for the intensity elements.
-version=2.3.1
+version=2.4.2
 author=Aldo Scorza
 email=hacked.crew@gmail.com
 
@@ -22,6 +22,7 @@ email=hacked.crew@gmail.com
 
 # Uncomment the following line and add your changelog:
 changelog=
+    2.4.2 from this update the QGIS Minimum version is 3.30; added a function in the Expression editor to retrieve the center-point and crs of a given map within a Print Layout, and return a double representing the magnetic declination (many thanks to Matthew Cengia https://github.com/mattcen); Fix QgsRubberBand error (many thanks to Chris Lyon https://github.com/Flushot)
     2.3.1 update WMM2020 (2020-2025) coefficients, update attribution, minor UI changes 
     2.0.1 minor fixes
     2.0.0 major release: Python3 upgrade, new API, minor UI changes, some bug fixes, update WMM Coefficient
