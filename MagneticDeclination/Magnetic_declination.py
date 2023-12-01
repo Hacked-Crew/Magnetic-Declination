@@ -98,7 +98,7 @@ class MagneticDeclination(QObject):
         self.dlg.feet_radioButton.clicked.connect(self.simple_Feet)
         self.dlg.toMagnetic_radioButton.clicked.connect(self.simple_ToMag)
         self.dlg.toTrue_radioButton.clicked.connect(self.simple_ToTrue)
-        self.dlg.color_toolButton.clicked.connect(self.simple_Kolors)
+        self.dlg.color_toolButton.clicked.connect(self.simple_Colors)
         #
         self.dlg.latitude_doubleSpinBox.valueChanged.connect(self.calcSenseLonLat)
         self.dlg.longitude_doubleSpinBox.valueChanged.connect(self.calcSenseLonLat)
@@ -613,7 +613,7 @@ class MagneticDeclination(QObject):
         self.iface.mapCanvas().refresh()
 
 
-    def simple_Kolors(self):
+    def simple_Colors(self):
         self.dlg.hide()
         self.NameColor = QColorDialog().getColor(QColor(self.red, self.green, self.blue)).name()
         self.dlg.show()
