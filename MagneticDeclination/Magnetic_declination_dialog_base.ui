@@ -11,19 +11,19 @@
     <x>0</x>
     <y>0</y>
     <width>480</width>
-    <height>370</height>
+    <height>380</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>480</width>
-    <height>370</height>
+    <height>380</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>480</width>
-    <height>370</height>
+    <height>380</height>
    </size>
   </property>
   <property name="font">
@@ -52,20 +52,26 @@
     <rect>
      <x>10</x>
      <y>2</y>
-     <width>251</width>
+     <width>291</width>
      <height>31</height>
     </rect>
    </property>
    <property name="font">
     <font>
      <family>Arial</family>
-     <pointsize>19</pointsize>
+     <pointsize>17</pointsize>
      <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
    <property name="text">
     <string>Magnetic Declination</string>
+   </property>
+   <property name="scaledContents">
+    <bool>false</bool>
+   </property>
+   <property name="wordWrap">
+    <bool>false</bool>
    </property>
   </widget>
   <widget class="QLabel" name="description_label">
@@ -80,7 +86,7 @@
    <property name="font">
     <font>
      <family>Arial</family>
-     <pointsize>10</pointsize>
+     <pointsize>9</pointsize>
      <weight>50</weight>
      <italic>false</italic>
      <bold>false</bold>
@@ -108,6 +114,7 @@
    </property>
    <property name="font">
     <font>
+     <family>Arial</family>
      <pointsize>9</pointsize>
     </font>
    </property>
@@ -265,13 +272,14 @@ rose</string>
      <property name="geometry">
       <rect>
        <x>6</x>
-       <y>177</y>
+       <y>183</y>
        <width>241</width>
        <height>91</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>9</pointsize>
       </font>
      </property>
@@ -281,7 +289,7 @@ rose</string>
      <widget class="QLineEdit" name="declination_lineEdit">
       <property name="geometry">
        <rect>
-        <x>111</x>
+        <x>120</x>
         <y>30</y>
         <width>121</width>
         <height>20</height>
@@ -289,6 +297,7 @@ rose</string>
       </property>
       <property name="font">
        <font>
+        <family>Arial</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -311,7 +320,7 @@ rose</string>
      <widget class="QLineEdit" name="heading_lineEdit">
       <property name="geometry">
        <rect>
-        <x>111</x>
+        <x>120</x>
         <y>63</y>
         <width>121</width>
         <height>20</height>
@@ -319,6 +328,7 @@ rose</string>
       </property>
       <property name="font">
        <font>
+        <family>Arial</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -337,14 +347,14 @@ rose</string>
        <rect>
         <x>6</x>
         <y>67</y>
-        <width>101</width>
+        <width>111</width>
         <height>16</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Arial</family>
-        <pointsize>9</pointsize>
+        <pointsize>8</pointsize>
         <kerning>true</kerning>
        </font>
       </property>
@@ -364,7 +374,7 @@ rose</string>
       <property name="font">
        <font>
         <family>Arial</family>
-        <pointsize>9</pointsize>
+        <pointsize>8</pointsize>
         <kerning>true</kerning>
        </font>
       </property>
@@ -379,11 +389,12 @@ rose</string>
        <x>6</x>
        <y>48</y>
        <width>151</width>
-       <height>125</height>
+       <height>131</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>9</pointsize>
       </font>
      </property>
@@ -472,6 +483,7 @@ rose</string>
       </property>
       <property name="font">
        <font>
+        <family>Arial</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -509,6 +521,7 @@ rose</string>
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>10</pointsize>
       </font>
      </property>
@@ -542,6 +555,7 @@ rose</string>
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>10</pointsize>
       </font>
      </property>
@@ -578,6 +592,7 @@ rose</string>
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>9</pointsize>
       </font>
      </property>
@@ -604,6 +619,7 @@ rose</string>
       </property>
       <property name="font">
        <font>
+        <family>Arial</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -631,6 +647,7 @@ rose</string>
       </property>
       <property name="font">
        <font>
+        <family>Arial</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -658,6 +675,7 @@ rose</string>
       </property>
       <property name="font">
        <font>
+        <family>Arial</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -738,16 +756,20 @@ rose</string>
        <x>176</x>
        <y>118</y>
        <width>268</width>
-       <height>55</height>
+       <height>61</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>9</pointsize>
       </font>
      </property>
      <property name="title">
       <string>Height (non active is ZERO)</string>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
      </property>
      <property name="checkable">
       <bool>true</bool>
@@ -758,8 +780,8 @@ rose</string>
      <widget class="QRadioButton" name="feet_radioButton">
       <property name="geometry">
        <rect>
-        <x>103</x>
-        <y>18</y>
+        <x>90</x>
+        <y>20</y>
         <width>51</width>
         <height>21</height>
        </rect>
@@ -780,7 +802,7 @@ rose</string>
      <widget class="QRadioButton" name="meter_radioButton">
       <property name="geometry">
        <rect>
-        <x>160</x>
+        <x>157</x>
         <y>18</y>
         <width>61</width>
         <height>21</height>
@@ -803,13 +825,14 @@ rose</string>
       <property name="geometry">
        <rect>
         <x>9</x>
-        <y>22</y>
-        <width>86</width>
+        <y>30</y>
+        <width>71</width>
         <height>24</height>
        </rect>
       </property>
       <property name="font">
        <font>
+        <family>Arial</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -832,9 +855,9 @@ rose</string>
      <widget class="QLabel" name="height_label">
       <property name="geometry">
        <rect>
-        <x>103</x>
-        <y>36</y>
-        <width>161</width>
+        <x>90</x>
+        <y>40</y>
+        <width>181</width>
         <height>20</height>
        </rect>
       </property>
@@ -872,6 +895,7 @@ rose</string>
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>9</pointsize>
       </font>
      </property>
@@ -898,6 +922,7 @@ rose</string>
       </property>
       <property name="font">
        <font>
+        <family>Arial</family>
         <pointsize>10</pointsize>
        </font>
       </property>
@@ -947,7 +972,7 @@ rose</string>
         <x>280</x>
         <y>26</y>
         <width>131</width>
-        <height>24</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
@@ -983,7 +1008,7 @@ rose</string>
         <x>171</x>
         <y>29</y>
         <width>77</width>
-        <height>20</height>
+        <height>21</height>
        </rect>
       </property>
       <property name="text">
@@ -1016,11 +1041,12 @@ rose</string>
        <x>10</x>
        <y>70</y>
        <width>433</width>
-       <height>76</height>
+       <height>100</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>9</pointsize>
        <kerning>true</kerning>
       </font>
@@ -1038,9 +1064,9 @@ rose</string>
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>17</y>
+        <y>20</y>
         <width>418</width>
-        <height>40</height>
+        <height>50</height>
        </rect>
       </property>
       <property name="font">
@@ -1072,7 +1098,7 @@ e.g.(01-01-2015, 01-01-2016, etc). Be sure of your choice!</string>
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>49</y>
+        <y>69</y>
         <width>87</width>
         <height>30</height>
        </rect>
@@ -1081,6 +1107,7 @@ e.g.(01-01-2015, 01-01-2016, etc). Be sure of your choice!</string>
        <font>
         <family>Arial</family>
         <pointsize>9</pointsize>
+        <kerning>true</kerning>
        </font>
       </property>
       <property name="text">
@@ -1091,7 +1118,7 @@ e.g.(01-01-2015, 01-01-2016, etc). Be sure of your choice!</string>
       <property name="geometry">
        <rect>
         <x>110</x>
-        <y>50</y>
+        <y>70</y>
         <width>98</width>
         <height>30</height>
        </rect>
@@ -1100,6 +1127,7 @@ e.g.(01-01-2015, 01-01-2016, etc). Be sure of your choice!</string>
        <font>
         <family>Arial</family>
         <pointsize>9</pointsize>
+        <kerning>true</kerning>
        </font>
       </property>
       <property name="text">
@@ -1114,13 +1142,14 @@ e.g.(01-01-2015, 01-01-2016, etc). Be sure of your choice!</string>
      <property name="geometry">
       <rect>
        <x>9</x>
-       <y>150</y>
+       <y>180</y>
        <width>213</width>
        <height>60</height>
       </rect>
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>9</pointsize>
       </font>
      </property>
@@ -1169,6 +1198,7 @@ e.g.(01-01-2015, 01-01-2016, etc). Be sure of your choice!</string>
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>11</pointsize>
       </font>
      </property>
@@ -1262,6 +1292,7 @@ p, li { white-space: pre-wrap; }
      </property>
      <property name="font">
       <font>
+       <family>Arial</family>
        <pointsize>11</pointsize>
       </font>
      </property>
