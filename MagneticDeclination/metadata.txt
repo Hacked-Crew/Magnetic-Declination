@@ -22,7 +22,7 @@ email=hacked.crew@gmail.com
 
 # Uncomment the following line and add your changelog:
 changelog=
-    2.4.2 Fix QgsRubberBand error (many thanks to Chris Lyon https://github.com/Flushot); Preserved compatibility between QGIS version after some API changes (rubberband's geometry type); added a function in the Expression editor to retrieve the center-point and crs of a given map within a Print Layout, and return a double representing the magnetic declination (many thanks to Matthew Cengia https://github.com/mattcen)
+    2.4.2 Fix QgsRubberBand error (many thanks to Chris Lyon https://github.com/Flushot); Preserved compatibility between QGIS version after some API changes (rubberband's geometry type); added a function in the Expression editor to retrieve the the magnetic declination of center-point of a given map within a print Layout (many thanks to Matthew Cengia https://github.com/mattcen)
     2.3.1 update WMM2020 (2020-2025) coefficients, update attribution, minor UI changes 
     2.0.1 minor fixes
     2.0.0 major release: Python3 upgrade, new API, minor UI changes, some bug fixes, update WMM Coefficient
