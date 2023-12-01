@@ -23,7 +23,7 @@ from builtins import str
 
 
 __author__ = 'Aldo Scorza'
-__date__ = '2019-02-22'
+__date__ = '2023-12-01'
 __copyright__ = '(C) 2015, Aldo Scorza'
 
 
@@ -457,11 +457,19 @@ class MagneticDeclination(QObject):
             self.OriX = self.pointRose.x()
             self.OriY = self.pointRose.y()
             #
-            self.rubberCenter = QgsRubberBand(self.iface.mapCanvas(), geometryType=QgsWkbTypes.LineGeometry.PolygonGeometry)
-            self.rubberRadius = QgsRubberBand(self.iface.mapCanvas(), geometryType=QgsWkbTypes.LineGeometry.Polygon)
-            self.rubberGhost1 = QgsRubberBand(self.iface.mapCanvas(), geometryType=QgsWkbTypes.LineGeometry.Polygon)
-            self.rubberGhost2 = QgsRubberBand(self.iface.mapCanvas(), geometryType=QgsWkbTypes.LineGeometry.Polygon)
-            self.rubberGhost3 = QgsRubberBand(self.iface.mapCanvas(), geometryType=QgsWkbTypes.LineGeometry.Polygon)
+            if Qgis.QGIS_VERSION_INT < 33000
+                self.rubberCenter = QgsRubberBand(self.iface.mapCanvas(), geometryType=2)
+                self.rubberRadius = QgsRubberBand(self.iface.mapCanvas(), geometryType=3)
+                self.rubberGhost1 = QgsRubberBand(self.iface.mapCanvas(), geometryType=3)
+                self.rubberGhost2 = QgsRubberBand(self.iface.mapCanvas(), geometryType=3)
+                self.rubberGhost3 = QgsRubberBand(self.iface.mapCanvas(), geometryType=3)
+            else:
+                self.rubberCenter = QgsRubberBand(self.iface.mapCanvas(), geometryType=QgsWkbTypes.GeometryType.Line)
+                self.rubberRadius = QgsRubberBand(self.iface.mapCanvas(), geometryType=QgsWkbTypes.GeometryType.Polygon)
+                self.rubberGhost1 = QgsRubberBand(self.iface.mapCanvas(), geometryType=QgsWkbTypes.GeometryType.Polygon)
+                self.rubberGhost2 = QgsRubberBand(self.iface.mapCanvas(), geometryType=QgsWkbTypes.GeometryType.Polygon)
+                self.rubberGhost3 = QgsRubberBand(self.iface.mapCanvas(), geometryType=QgsWkbTypes.GeometryType.Polygon)
+             
             self.rubberCenter.setIconSize(10)
             self.rubberRadius.setWidth(5)
             self.rubberGhost1.setWidth(5)
