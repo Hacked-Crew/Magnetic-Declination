@@ -24,7 +24,7 @@ MAGNETIC DECLINATION PLUGIN FOR QGIS
 Calculates the magnetic heading from a true geographic heading and vice versa.
 Impress on map a Nautical Compass Rose (conformal) with obtained values.
 
-A function in the Expression editor retrieve the center-point and crs of a given map within a Print Layout, and return a double representing the magnetic declination (many thanks to Matthew Cengia https://github.com/mattcen)
+A function in the Expression editor retrieve the the magnetic declination of center-point of a given map within a print layout (many thanks to Matthew Cengia https://github.com/mattcen)
 
 
 Use "geomag package"
