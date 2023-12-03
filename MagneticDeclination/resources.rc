@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/">
+    <file>img/kofi2.png</file>
     <file>img/icon.png</file>
     <file>img/logo_paypal_carte_oriz.png</file>
   </qresource>
