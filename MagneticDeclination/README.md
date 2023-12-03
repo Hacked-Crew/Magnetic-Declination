@@ -16,7 +16,6 @@ Impress on map a Nautical Compass Rose (conformal) with obtained values.
 
 A function in the Expression editor retrieve the the magnetic declination of center-point of a given map within a print layout (many thanks to Matthew Cengia https://github.com/mattcen)
 
-
 Use "geomag package"
 by Christopher Weiss 
 https://github.com/cmweiss/geomag
@@ -26,8 +25,8 @@ http://www.ngdc.noaa.gov/geomag/WMM/)
 Model values by NCEI Geomagnetic Modeling Team and British Geological Survey. 2019. World Magnetic Model 2020. NOAA National Centers for Environmental Information.
 doi: 10.25921/11v3-da71 (https://doi.org/10.25921/11v3-da71), 2020, [date accessed]
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O5O7RSF7M)
+
 __author__ = 'Aldo Scorza'
-
 __date__ = '2023-11-30'
-
 __copyright__ = '(C) 2015, Aldo Scorza'
