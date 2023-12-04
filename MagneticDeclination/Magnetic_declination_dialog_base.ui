@@ -1193,7 +1193,7 @@ e.g.(01-01-2015, 01-01-2016, etc). Be sure of your choice!</string>
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>450</width>
+       <width>455</width>
        <height>273</height>
       </rect>
      </property>
@@ -1285,9 +1285,9 @@ p, li { white-space: pre-wrap; }
     <widget class="QTextBrowser" name="textBrowser_2">
      <property name="geometry">
       <rect>
-       <x>-10</x>
+       <x>0</x>
        <y>0</y>
-       <width>450</width>
+       <width>455</width>
        <height>273</height>
       </rect>
      </property>
