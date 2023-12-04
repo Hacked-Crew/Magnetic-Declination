@@ -457,7 +457,7 @@ class MagneticDeclination(QObject):
             self.OriX = self.pointRose.x()
             self.OriY = self.pointRose.y()
             #
-            if Qgis.QGIS_VERSION_INT < 33000
+            if Qgis.QGIS_VERSION_INT < 33000:
                 self.rubberCenter = QgsRubberBand(self.iface.mapCanvas(), geometryType=2)
                 self.rubberRadius = QgsRubberBand(self.iface.mapCanvas(), geometryType=3)
                 self.rubberGhost1 = QgsRubberBand(self.iface.mapCanvas(), geometryType=3)
