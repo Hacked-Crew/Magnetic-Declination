@@ -33,4 +33,4 @@ def mag_heading(hdg, *args, **kargs):
     All other parameters are the same as declination.
     """
     dec = declination(*args, **kargs)
-    return (hdg - dec + 360.0) % 360
+    return (hdg + dec + 360.0) % 360
