@@ -405,9 +405,9 @@ class MagneticDeclination(QObject):
         self.vAr = (str(degrees) + u'\u00B0' + str(minutes) + u'\u2032')
         #
         if simple_XtoMagnetic == 1:
-            Rheading = (float(self.Rdeclination) + float(simple_heading)) % 360 
-        else:
             Rheading = geomag.mag_heading(float(simple_heading), float(self.simple_latitude), float(self.simple_longitude), float(simple_Cheight), date(simple_year,simple_month,simple_day))
+        else:
+            Rheading = (float(self.Rdeclination) + float(simple_heading)) % 360 
         #
         self.dlg.declination_lineEdit.setText(str(self.Rdeclination) + u'\u00B0')
         self.dlg.heading_lineEdit.setText(str(Rheading) + u'\u00B0')
